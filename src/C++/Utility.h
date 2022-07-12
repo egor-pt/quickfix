@@ -109,6 +109,7 @@ typedef int socket_handle;
 #include <cstring>
 #include <cctype>
 #include <ctime>
+#include <cstddef>
 #include <cstdio>
 #include <cstdlib>
 #include <memory>
