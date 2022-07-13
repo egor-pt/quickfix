@@ -53,6 +53,13 @@ SocketAcceptor::~SocketAcceptor()
     delete iter->second;
 }
 
+void SocketAcceptor::addSession( Session* session, const SessionID& sessionID, int port )
+{
+  // ToDo: add mutex
+  m_portToSessions[port].insert( sessionID );
+  Acceptor::addSession(session, sessionID);
+}
+
 void SocketAcceptor::onConfigure( const SessionSettings& s )
 EXCEPT ( ConfigError )
 {

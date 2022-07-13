@@ -44,6 +44,8 @@ public:
 
   virtual ~SocketAcceptor();
 
+  void addSession( Session* session, const SessionID& sessionID, int port );
+
 private:
   bool readSettings( const SessionSettings& );
 

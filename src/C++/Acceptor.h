@@ -90,6 +90,8 @@ public:
   MessageStoreFactory& getMessageStoreFactory()
   { return m_messageStoreFactory; }
 
+  void addSession( Session* session, const SessionID& sessionID );
+
 private:
   void initialize() EXCEPT ( ConfigError );
 

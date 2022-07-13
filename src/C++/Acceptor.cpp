@@ -66,6 +66,13 @@ EXCEPT ( ConfigError )
   initialize();
 }
 
+void Acceptor::addSession( Session* session, const SessionID& sessionID )
+{
+  // ToDo: add mutex
+  m_sessions[sessionID] = session;
+  m_sessionIDs.insert(sessionID);
+}
+
 void Acceptor::initialize() EXCEPT ( ConfigError )
 {
   std::set < SessionID > sessions = m_settings.getSessions();
