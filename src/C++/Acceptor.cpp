@@ -101,7 +101,11 @@ Acceptor::~Acceptor()
 {
   Sessions::iterator i;
   for ( i = m_sessions.begin(); i != m_sessions.end(); ++i )
+  {
+    std::cout << "Deleting: " << std::endl;
+    std::cout << i->first << std::endl;
     delete i->second;
+  }
 
   if( m_pLogFactory && m_pLog )
     m_pLogFactory->destroy( m_pLog );
